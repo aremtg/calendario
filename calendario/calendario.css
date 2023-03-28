@@ -18,12 +18,13 @@ body{
     background-color:var(--tema-fondo);
 }
 #contenido{
-    width: 35%;
+    width: 80%;
     margin-top: 200px;
     position: absolute;
 }
 .semana{
-    height: 120px;
+    width:max-content;
+    height: 110px;
     display: flex;
     gap: 5px;
     padding: 20px 40px;
@@ -51,6 +52,7 @@ body{
     color: black;
     border: 6px solid var(--tema-fondo);
     transform: translateY(-70px);
+    
 }
 .semana li.actual::before{
     content: " ";
@@ -74,19 +76,19 @@ body{
     border-top-left-radius: 10px;
     box-shadow: -2px -6px var(--tema-fondo);
 }
-.semana li.actual::after{
-    content: "n";
-    font-weight: 600;
-    font-size: 20px;
-    text-align: center;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    top: -10px;
-    right: -5px;
-    border-radius: 50px;
-    background-color: rgb(255, 0, 8);
-    border: 5px solid rgb(241, 141, 146);
+.spanRojito{
+  border-radius: 30px;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  background-color: rgb(255, 0, 8);
+  border: 3px solid rgb(241, 141, 146);
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
 }
 .semana li.actual h1{
     position: absolute;
@@ -103,11 +105,12 @@ body{
     border-radius: 10px;
     padding: 5px;
 }
+
 .editarEventos{
     display: flex;
     flex-direction: column;
     position: absolute;
-    font-size: 16px;
+    font-size: 13px;
     right: -95px ;
     top: 15px;
     background-color: rgb(209, 209, 209);
@@ -115,18 +118,19 @@ body{
     padding: 0px 10px 4px;
     text-align: center;
     align-items: center;
+    box-shadow: 2px 5px 4px rgba(0, 0, 0, 0.3);
 }
 .editarEventos img{
-    width: 50px;
+    width: 30px;
     height: 40px;
 }
 .eventos .titulo{
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 250px;
     width: max-content;
+    font-size: 24px;
     background-color: var(--blanco);
     margin-top: 5px;
-    margin-bottom: 5px;
+    border-bottom: 5px solid rgb(185, 120, 245);
 }
 .eventos ul{
     list-style: none;
@@ -136,9 +140,44 @@ body{
 }
 .eventos .evento{
     height: 80px;
+    width: 700px;
     border-radius: 20px;
     background-color: var(--blanco);
     padding-left: 10px;
     padding-top: 10px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
+.activoRevisando {
+    position: relative;
+    background-color: yellow;
+    height: 100px;
+    width: 100px;
+    font-size: 1.5rem;
+    color: rgb(0, 0, 0);
+    border: 6px solid var(--tema-fondo);
+    transform: translateY(-70px);
+    transition: transform .4s;
+  }
+
+  .alerta {
+    margin: 100px;
+
+    position: fixed;
+    padding: 2rem;
+    background-color: #0fe42f94;
+    color: rgb(253, 135, 0);
+    font-weight: 600;
+    font-size: 20px;
+    box-shadow: 2px 5px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    width: max-content
+  }
+  
+  .alerta .cerrar {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+  }

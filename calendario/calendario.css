@@ -8,19 +8,32 @@
 :root{
    --blanco: white;
    --negro: black;
-   --tema-fondo: #ffffff;
-   --verde-bon:#0fe42f;
+   --tema-fondo: #C9E265;
+   --verde-bon:#769412;
 }
 body{
     display: flex;
     justify-content: center;
     min-height: 100vh;
-    background-color:var(--tema-fondo);
+    background-image: url(fondo2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-color:var(--tema-fondo); */
 }
 #contenido{
     width: 80%;
     margin-top: 200px;
     position: absolute;
+}
+.tituloFecha{
+    width: max-content;
+    position: absolute;
+    transform: translateY(-110px);
+    background-color: rgb(188, 240, 143);
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 20px;
 }
 .semana{
     width:max-content;
@@ -28,6 +41,7 @@ body{
     display: flex;
     gap: 5px;
     padding: 20px 40px;
+    padding-right: 10px;
     background-color: var(--blanco) ;
     border-radius:30px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -95,40 +109,27 @@ body{
     transform: translateY(76px);
     font-size: 30px;
 }
-.semana li.actual h2{
-    width: max-content;
-    position: absolute;
-    transform: translateY(-90px);
-    left: 0;
-    background-color: rgb(188, 240, 143);
-    color: var();
-    border-radius: 10px;
-    padding: 5px;
-}
-
-.editarEventos{
+.agregarEventos{
     display: flex;
+    width: 65px;
     flex-direction: column;
-    position: absolute;
-    font-size: 13px;
-    right: -95px ;
-    top: 15px;
+    font-size: 12px;
     background-color: rgb(209, 209, 209);
     border-radius: 20px;
-    padding: 0px 10px 4px;
+    padding: 2px 35px;
     text-align: center;
     align-items: center;
-    box-shadow: 2px 5px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
-.editarEventos img{
-    width: 30px;
-    height: 40px;
+.agregarEventos img{
+    width: 25px;
+    height: 35px;
 }
 .eventos .titulo{
     margin-left: 250px;
     width: max-content;
     font-size: 24px;
-    background-color: var(--blanco);
+    background-color: #C9E265;
     margin-top: 5px;
     border-bottom: 5px solid rgb(185, 120, 245);
 }
@@ -140,14 +141,14 @@ body{
 }
 .eventos .evento{
     height: 80px;
-    width: 700px;
+    width: 735px;
     border-radius: 20px;
     background-color: var(--blanco);
     padding-left: 10px;
     padding-top: 10px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
-.activoRevisando {
+.semana li.actual2 {
     position: relative;
     background-color: yellow;
     height: 100px;
@@ -161,7 +162,6 @@ body{
 
   .alerta {
     margin: 100px;
-
     position: fixed;
     padding: 2rem;
     background-color: #0fe42f94;

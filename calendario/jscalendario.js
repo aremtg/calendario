@@ -24,88 +24,54 @@ function activar() {
 
     let listaDeEventos = document.querySelector(".listaDeEventos");
 
-    listaDeEventos.innerHTML =
-    ` `;
+    listaDeEventos.innerHTML = ` `;
      actualizarNumerito()
 function actualizarNumerito(){
-  let numLi = listaDeEventos.childElementCount;
+  let numEventos = listaDeEventos.childElementCount;
      let span = document.createElement("span");
-     span.innerHTML = numLi;
+     span.innerHTML = numEventos;
      span.classList.add("spanRojito");
      active.appendChild(span);
 }
-     
 
 }  
-let botonagregarEventos = document.querySelector(".agregarEventos");
+let botonAgregarEventos = document.querySelector(".agregarEventos");
 
-botonagregarEventos.addEventListener("click", function(){
-  let listaDeEventos = document.querySelector(".listaDeEventos");
+botonAgregarEventos.addEventListener("click", function(){
+    let listaDeEventos = document.querySelector(".listaDeEventos");
 
     let nuevoElemento = document.createElement("input");
-    listaDeEventos.appendChild(nuevoElemento);
-    nuevoElemento.classList.add("evento")
-   
-  let numLi = listaDeEventos.childElementCount;
+      listaDeEventos.appendChild(nuevoElemento);
+      nuevoElemento.classList.add("evento");
+    
+    let numEventos = listaDeEventos.childElementCount;
 
-     
-
-     if(numLi <= 6){
+    if(numEventos <= 6){
       let span = document.createElement("span");
-     span.innerHTML = numLi;
-     span.classList.add("spanRojito");
-     active.appendChild(span);
-      
-    }else if(numLi > 6){
+      span.innerHTML = numEventos;
+      span.classList.add("spanRojito");
+      active.appendChild(span);
+        
+    }else if(numEventos > 6){
       let multiuso = document.querySelector(".multiuso");
       multiuso.innerHTML = `<div class="alerta">
       <span class="cerrar">&times;</span>
-      <p>MAXIMO NUMERO DE EVENTOS</p>
+      <p>Error: no se pueden agregar más de 6 eventos.</p>
       </div>`;
       let alerta = document.querySelector(".alerta");
       let cerrarAlerta = document.querySelector(".cerrar");
       cerrarAlerta.addEventListener("click", function() {
-        alerta.style.display = "none";
+      alerta.style.display = "none";
         
-      })
-      nuevoElemento.remove()
-    }
+      });
+      nuevoElemento.remove();
+      }
+    
+  });
 
-    //   for(let i = 7; i<=numLi;i--){
-    //     console.log(i)
-    //     if(i == 0){
-    //       console.log(i)
-    //        let multiuso = document.querySelector(".multiuso");
-    //          multiuso.innerHTML = `<div class="alerta">
-    //          <span class="cerrar">&times;</span>
-    //          <p>MAXIMO NUMERO DE EVENTOS</p>
-    //        </div>`;
-    //         let alerta = document.querySelector(".alerta");
-    //         let cerrarAlerta = document.querySelector(".cerrar");
-    //         cerrarAlerta.addEventListener("click", function() {
-    //           alerta.style.display = "none";
-    //         })
-    //   } 
-    // }
+  $(".spanRojito").click(function () { 
+    $(".spanRojito").addClass("hojitas");
+     
+  })
 });
 
- 
-});
-  //   let diasDeLaSemana = document.querySelectorAll(".semana li");
-
-  // diasDeLaSemana.forEach(dia => 
-  //       dia.addEventListener("click", function(){
-  //        let multiuso = document.querySelector(".multiuso");
-  //        multiuso.innerHTML = `<div class="alerta">
-  //        <span class="cerrar">&times;</span>
-  //        <p>No es posible ver los eventos futuros, <br> consulte con su instructor</p>
-  //      </div>`;
-  //      let alerta = document.querySelector(".alerta");
-  //      let cerrarAlerta = document.querySelector(".cerrar");
-
-  //       // cerrarAlerta.addEventListener("click", function() {
-  //       // alerta.style.display = "none";
-        // })
-       
-    //     })
-    // )

@@ -104,6 +104,56 @@ body{
   font-size: 20px;
   color: rgb(255, 255, 255);
 }
+/* Hojitas */
+.spanRojito::after{
+    content: "";
+    position: absolute;
+    background-color: rgb(168, 252, 34);
+    border: 1px solid green;
+    width: 10px;
+    height: 20px;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    top: -15px;
+    right: 14px;
+    transform: rotate(-95deg);
+}
+.spanRojito::before{
+    content: "";
+    position: absolute;
+    background-color: rgb(168, 252, 34);
+    border: 1px solid green;
+    width: 10px;
+    height: 20px;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    top: -8px;
+    right: -7px;
+    transform: rotate(-95deg);
+}
+.hojitas::after{
+   animation: movimientoDeHojitas 4s  ;
+}
+@keyframes movimientoDeHojitas{
+  0% {
+    transform: translateY(0) rotate(-95deg) translateX(0);
+  }
+  20% {
+    transform: translateY(20px) rotate(-15deg) translateX(5px);
+  }
+  40% {
+    transform: translateY(40px) rotate(-95deg) translateX(0);
+  }
+  60%{
+    transform: translateY(60px) rotate(-5deg) translateX(5px);
+  }
+  80%{
+    transform: translateY(80px) rotate(-15deg) translateX(0);
+  }
+  100%{
+    transform: translateY(90px) rotate(-15deg) translateX(5px);
+  } 
+}
 .semana li.actual h1{
     position: absolute;
     transform: translateY(76px);
@@ -129,7 +179,8 @@ body{
     margin-left: 250px;
     width: max-content;
     font-size: 24px;
-    background-color: #C9E265;
+    background-color:transparent;
+    font-weight: 900;
     margin-top: 5px;
     border-bottom: 5px solid rgb(185, 120, 245);
 }
@@ -146,6 +197,9 @@ body{
     background-color: var(--blanco);
     padding-left: 10px;
     padding-top: 10px;
+    outline: none;
+    border: none;
+    font-size: 19px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 .semana li.actual2 {
@@ -160,17 +214,40 @@ body{
     transition: transform .4s;
   }
 
-  .alerta {
+.alerta {
     margin: 100px;
     position: fixed;
+    left: 100px;
     padding: 2rem;
-    background-color: #0fe42f94;
-    color: rgb(253, 135, 0);
+    background-color: #e40f0fc7;
+    border: 2px solid #ff3700;
+    color: rgb(0, 0, 0);
     font-weight: 600;
     font-size: 20px;
     box-shadow: 2px 5px 4px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
-    width: max-content
+    width: max-content; 
+  }
+  .alerta{
+    animation: palpitacion .5s ;
+  }
+  
+  @keyframes palpitacion {
+    0% {
+        transform: translateY(0);
+      }
+      25% {
+        transform: translateY(-10px);
+      }
+      50% {
+        transform: translateY(0);
+      }
+      75% {
+        transform: translateY(-5px);
+      }
+      100% {
+        transform: translateY(0);
+      }
   }
   
   .alerta .cerrar {
